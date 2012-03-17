@@ -5,10 +5,13 @@
 // @include        http://www.lemonde.fr/
 // ==/UserScript==
 
-
-
-
-var lives = document.getElementsByClassName('conteneur_lives');
-for (var el in lives) {
-  lives[el].style.display = 'none';
+function removeClass(className) {
+  var elements = document.getElementsByClassName(className);
+  for (var el in elements) {
+    elements[el].style.display = 'none';
+  }
 }
+
+removeClass('conteneur_lives');
+removeClass('plus_partages');
+
