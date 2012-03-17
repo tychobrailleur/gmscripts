@@ -8,10 +8,15 @@
 function removeClass(className) {
   var elements = document.getElementsByClassName(className);
   for (var el in elements) {
-    elements[el].style.display = 'none';
+    elements[el].parentNode.removeChild(elements[el]);
   }
 }
 
-removeClass('conteneur_lives');
+function removeId(idElement) {
+  var element = document.getElementById(idElement);
+  element.parentNode.removeChild(element);
+}
+
+removeId('bandeau_bas');
 removeClass('plus_partages');
 
